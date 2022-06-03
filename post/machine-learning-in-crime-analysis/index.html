@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Machine Learning in Crime Analysis | Emerging Topics in AI&amp;ML</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://orionsor.github.io//favicon.ico?v=1654270507275">
+<link rel="stylesheet" href="https://orionsor.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+1. APPLICATION DOMAIN
+1.1 Domain Overview
+Crime is a global security concern that threatens residents' well-being as we..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://orionsor.github.io/">
+        <img src="https://orionsor.github.io//images/avatar.png?v=1654270507275" class="site-logo">
+        <h1 class="site-title">Emerging Topics in AI&amp;ML</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Article List
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      For ELEC0139
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://orionsor.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Machine Learning in Crime Analysis</h2>
+            <div class="post-date">2022-05-28</div>
+            
+            <div class="post-content" v-pre>
+              <figure data-type="image" tabindex="1"><img src="https://orionsor.github.io//post-images/1654261059457.png" alt="" loading="lazy"></figure>
+<h2 id="center1-application-domaincenter"><strong><center>1. APPLICATION DOMAIN</center></strong></h2>
+<h3 id="11-domain-overview"><strong>1.1 Domain Overview</strong></h3>
+<p>Crime is a global security concern that threatens residents' well-being as well as the long-term growth of society. In recent years, the incidence of crime has spread drastically in tandem with the rapid advancement of urbanisation, putting the public's and individuals' interests in jeopardy. According to the statistics launched by Statista Research Department, the number of recorded crime offences in London has increased steadily since 2015, reaching a peak of 9912.49 thousand incidences for 2019/20. Though a sharp declineshows in the figure after the breakout of Covid-19, future trends in crime remain unpromising, which can be regardedas a reference for the overall worldwide situation. Fig. 1 displays part of the crime map for London, showing the prevalence of all sorts of crimes.<br>
+<img src="https://orionsor.github.io//post-images/1654255988143.png" alt="" loading="lazy"> <center>Fig. 1 London Crime Map</center></p>
+<p>Here is a wide variety of criminal behaviours that commonly take place in the neighbourhoods, including anti-social offences, illegal possession of weapons, vehicle crimes, sexual harassment, burglary, etc., which greatly affect the living environment for citizens. Besides, cybercrime has emerged as a new prevalent threat to the information safety of both individuals and business organizations with theirgrowing reliance on social media and cloud technologies[1]. Different types of crime can be induced by distinct and complex causes. Individual factors like personal conflict or morbid psychology may be part of criminal motivation. Alternatively, in the environmental aspect, illiteracy, dense population, poverty, unemployment and racial hatred can contribute to the rising number of violent crimes, which account for a substantial proportion of all crimes [2]. In order to minimize crimes and maintain the sustainable safety of society, it is crucial for law enforcement agencies to conduct thorough analysis of crime-related data to extract hidden information such as trends in the crime rate, criminal hotspots, etc. Moreover, police resources can also be effectively allocated based on sufficient investigation of crime statistics. generally, there are three distinct classes of criminal analysis: crime prediction, crime detection, and legalanalysis. Each category will be elaborated and the associated challenges will be discussed in the next section.</p>
+<h3 id="12-application-cases-and-challenges"><strong>1.2 Application Cases and Challenges</strong></h3>
+<p><em><table><tr><td bgcolor=WhiteSmoke> With the growing volumes of crime data, traditional and manual approaches may fail to perform efficient and accurate analysis. In this section, challenges for each analysis category will be discussed and machine learning applications will be introduced as superior solutions to the problems. </td></tr></table></em></p>
+<h4 id="121-crime-prediction"><em>1.2.1 Crime Prediction</em></h4>
+<p>The purpose of crime prediction is to extrapolate hidden patterns from previous criminal records so as to anticipate and mitigate future offences.</p>
+<p>Crime rate is a primary indicator of the overall habitabilityand safety of the community, which is usually represented by the crime counts normalized by the population in a specific region [3]. Inferring crime rates across time can strengthen public vigilance and help polices make sufficient preparation in advance. Prior researchers have found that crime rate is affected by population, education level, unemployment, economic conditions and other demographic features [4]. Therefore, comprehensive information besides from time and location of certain crimes should be considered to properly diagnose crime situations.</p>
+<p>Crime Hotspots refer to the area with higher occurrences of crime incidents. Though criminals may commit offences at random places, some regions are more prone to criminal events. For example, busy blocks are attractive to thieves. and some unfrequented streets may have higher possibilities for robbery to take place. Consequently, identifying and forecasting hotspots can provide early warning and help related agencies to prioritize resource allocation. It is noteworthy that hotspots may shift over time with the change in urban layout or other environmental attributes, which increases the complexity of analysis</p>
+<p>To efficiently forecast crime trends, sophisticated investigation of both spatial and temporal features is required, involving a large volume of historical data to be processed. Moreover, it is technologically demanding to extract useful information from the compound of mixed records. Traditional methods that combine basic statistical approaches and cultural analysis can give qualitative conclusions that contribute to anthropological or sociological studies [5]. However, when it comes to quantitative calculation, accuracy becomes the major challenge to be faced in solving real-world problems</p>
+<p>Therefore, data mining and machine learning techniques become vital tools to accelerate big data computing as well as make precise crime predictions. [6] proposed a hybridprediction system based on crime datasets containing over 1 billion records from three US cities. Mining techniques were used to infer statistical relevance among 13 feature attributes including dates, locations crime types, etc. Key features were reserved to be fed into the Long Short-term Memory (LSTM) predictive model, which is a powerful neural network optimal for time-series data. The approach acquired promising results in terms of RMSE metric. [7]compared performance of different supervised learning models in forecasting hotspots. As a result, Boosted Decision Tree outperformed Decision Tree, K Nearest Neighbour (KNN), and Naïve Bayes (NB), yielding the highest accuracy of 96%. [8] went further to make comprehensive analysis of three kinds of ML algorithms in different application tasks, as depicted in Fig. 2. Crime types were estimated by Logistic Regression, MLP, Random Forest, XGBoost and other classic ML approaches. Exploratory Data Analysis and LSTM were combined to visualize future crime situations on different timescales. And statistic model like ARIMA was applied to forecast the crime rate in five years. With an average increase in accuracy by around 20%, the study indicates prosperous future prospect for AI applications in the criminal justice industry<br>
+<img src="https://orionsor.github.io//post-images/1654256269678.png" alt="" loading="lazy"></p>
+<center>Fig. 2 Approach Overview [8]</center>
+<p>To overcome the limitations of past criminal records and geographical information, [9] explored the relationship be-tween online social behaviour and crime events. By ex-panding data collection into cyberspace, more robust pre-dictive models can be proposed to fit with current era char-acteristics. In addition, cyber-criminal issues can also be addressed with the extra assistance of online information.</p>
+<h4 id="122-crime-detection"><em>1.2.2 Crime detection</em></h4>
+<p>Crime detection focuses on identifying ongoing criminal events for police officials to intervene as soon as possible. In urban life, CCTVs that are dispersed throughout pri-vate and public places in cities constitute the major visual source for detection, which usually requires human supervi-sion to monitor. Therefore, timeliness and accuracy become the main obstacle that lays in front of responsible officials. To start with, there are insufficient human resources to manage the huge amounts of videos, which may lead to information loss. Besides, human judgement is prone to causing errors and latency due to individual variance and tiredness. Though cameras are convenient devices for large-scale utilization, more intelligent and automated techniques should be implemented for real-time video stream crime detection.</p>
+<p>Machine learning-based object detection algorithms can be used to identify the crime timely before violations escalate. [10] presented a deep learning-based criminal detection system that is able to process images at 45 fps, which satis-factorily meets up the need for real-time surveillance. In the study, YOLO, an object recognition model based on Convo-lutional Neural Network (CNN) was employed to detect criminal faces and threatening weapons displayed in live feeds. When weapons are present, the individuals seen in the vide-os will be compared to an existing criminal database and continuously monitored. Alarming messages with precise locations will be sent to a nearby official for further action. Similarly, [11] also used the presence of weapons as a signal of violent crimes, in which a trained VGG-19 deep network was utilized to distinguish people from weapons. The result was compared with Google Net V3 and proved more effective with a precision of 92%. The visualized re-sult is shown in Fig. 3, where people and weapons are marked with different colours with the estimated possibility displayed on top.</p>
+<figure data-type="image" tabindex="2"><img src="https://orionsor.github.io//post-images/1654256606925.png" alt="" loading="lazy"></figure>
+<center>Fig. 3 Crime Detection [11]</center>
+<h4 id="123-legal-analysis"><em>1.2.3 Legal Analysis</em></h4>
+<p>The legal analysis is undertaken to either support crime theory for future legislation or to help police officials and law enforcement organizations to handle criminal cases. Applications that fall in this category include crime risk evaluation, criminal profiling, automated jury and other smart policing methods. The main purpose of applying Artificial Intelligence to law enforcement procedures is to overcome the restriction and bias caused by human nature. For example, it is unreasonable to expect human researchers to remember all the text-based files and draw quantitative conclusions quickly. In addition, human perceptions of criminal facts are influenced by cultural or personal biases, which can be reflected in the jury system and result in po-tential unjust verdicts. Consequently, AI seems to be a fair alternative that provides speedy and accurate results with-out subjective will.</p>
+<p>[12] discussed possible AI applications in the legal processes from lawyering, judging, and policing to law enforcement, which would transform the crime-and-law related field. To start with, data mining techniques outperform human lawyers in document review. While fatigue and distraction may cause a substantial decline in human-driven work, machines are not affected despite the inherent imperfectionsof relevant algorithms. machine learning models can be used to evaluate freshly committed crimes in terms of risk score and potential sentencing, based on a detailed analysis and reasoning of historical examples. Relevant applications have already attracted researchers' interest. [13] proposed a Natural Language Processing (NLP) system for processing crime-related files, which is capable of intelligently annotating and filtering text-based files. [4] presented a legal consultation system targeting Chinese documents, using the GA-KNN algorithm to identify similar cases from extracted keywordsand make legal judgements. Comprehensive features such asmain judicial arguments, case facts and past sentences are<br>
+taken into consideration.</p>
+<h2 id="center2-machine-learning-technologiescenter"><strong><center>2. MACHINE LEARNING TECHNOLOGIES</center></strong></h2>
+<p><em><table><tr><td bgcolor=WhiteSmoke> As briefly discussed in the overview section, machine learning-oriented techniques may transform the crime analysis domain, leading to more intelligent and efficient processing of the vast volumes of historic criminal records. Several state-of-the-art ML technologies will be introduced in this section, and how they may address the current challenges will also be elaborated. </td></tr></table></em></p>
+<h3 id="21-computer-vision"><strong>2.1 Computer Vision</strong></h3>
+<p>Computer vision is a wide and promising machine learning technique that extends from image recognition, object detection, and tracking to image segmentation and face recognition, among other applications. Early in the development of computer vision, the performance is hampered by the shortage of data, insufficient memory, and inadequate computational capabilities [16]. Widespread sensors and memory have enabled the availability of massive image datasets in recent years, fostering the growth of data-driven computer vision[16]. Consequently, computer vision methods based on deep learning may be used to the identification of crimes based on large-scale visual data gathered by citywide sensors.</p>
+<h4 id="211-fast-region-based-convolutional-neural-network-rcnn"><em>2.1.1 Fast Region-Based Convolutional Neural Network (RCNN)</em></h4>
+<p>Fast RCNN was proposed by R. Girshick as an improved version of RCNN, one of the primary deep learning-basedframeworks for object recognition [17]. In the original RCNN network, 2000 candidate boxes are extracted from the input image using a selective search method, which are then clipped and deformed into a fixed size of 277 × 277 as the input of the convolutional neural network. The extracted 4096-dimensional features are fed into a Support Vector Machine (SVM) for classification.</p>
+<p>Though Non-maximum suppression algorithm (NMS) is used to improve detection precision by eliminating redundant candidate boxes, the repeated convolutional calculation is very time-consuming and restricts the network’s performance in real-time application. Therefore, to overcome the above limitations, Fast RCNN replaces the 2000 candidate boxes with the entire image as the CNN input to extract the feature map, from which region proposals are identified and normalized by the Region of Interest (ROI) pooling layers [17]. Also, parallel fully-connected layers are added at the end of the network, which can perform classification and regression tasks simultaneously with no additional storage occupation. The full framework is shown in Fig. 4.<br>
+<img src="https://orionsor.github.io//post-images/1654257498437.png" alt="" loading="lazy"></p>
+<center>Fig. 4 Fast RCNN Structure[17]</center>
+<p>In order to further reduce the time complexity and pursue higher accuracy, Faster RCNN was proposed in 2015, which combines the Fast RCNN with a novel network named Re-gion Proposal Network (RPN) [18]. In RPN, a 3 × 3 sliding window is used to traverse the feature map, generating nine anchor boxes with three size scales at the centroid of each position. High-equality region proposals are identified by NMS employed on scores of each anchor box obtained from preliminary border regression and classification. In this way, Faster RCNN outperforms the previous two frame-works and can therefore be used as the backbone of deep learning models for object recognition that requires high accuracy. The structure overview is displayed in Fig. 5.</p>
+<figure data-type="image" tabindex="3"><img src="https://orionsor.github.io//post-images/1654264266483.png" alt="" loading="lazy"></figure>
+<center>Fig. 5 Faster RCNN Structure</center>
+<h4 id="212-you-only-look-once-yolo"><em>2.1.2 You Only Look Once (YOLO)</em></h4>
+<p>Though the computation time of the series of RCNNs has been reduced to a great extent, the region proposal step still consumes much time and restricts their performance in real-time detection. You Only Look Once (YOLO), firstly proposed by Redmon et al. in 2016 [19], is a revolutionary recognition and localisation algorithm that has developed to the 5th generation. It substantially enhances the detection efficiency to around 140 fps at a slight expense of precision. Unlike Faster RCNN using RPN to retrieve the region of interest, YOLO adopts a one-stage structure which is built fully with CNNs. Fig. 6 demonstrated the structure of YOLO v1, which lays the foundation of the YOLO series.<br>
+<img src="https://orionsor.github.io//post-images/1654257847520.png" alt="" loading="lazy"></p>
+<center>Fig. 6 YOLO v1 architecture [19]</center>
+<p>YOLO uses a separate detection mechanism, dividing the whole image into 7×7 grids called bounding box and performing bounding box and class prediction simultaneouslyfor each grid. By treating the detection task as a pure regression problem, YOLO prevents the use of additional RPN and reduces the training burden. Loss of accuracy is the challenge left for YOLO to address.</p>
+<p>YOLO v3 focuses on improving accuracy as well as maintaining excellent speed, which is popular in the current industry. Compared to prior versions, the main modification in version 3 is the adoption of feature maps in three scales, which can better adapt to objects of different sizes. Also, by using Darknet-19 as the backbone, features of higher quality can be extracted, which contributes to the overall performance. Therefore, though slightly slower than YOLO v2, with a speed of 33 fps on 416×416 images, v3 is still an optimal choice in real-world applications.</p>
+<h4 id="213-applications"><em>2.1.3 Applications</em></h4>
+<p>Though RCNN has drawbacks in detection latency, its excellence in precision can well solves the high error rate caused by human supervision. Moreover, by combining RCNN with YOLO or other high-speed algorithms, robust crime detection systems that balance performance and efficiency can be built.</p>
+<p>In urban crime detection, one useful scheme is to identifywhether violent weapons such as guns or knives are captured by surveillance cameras. False positives in this situation should be minimized as police resources can be wasted if alarms are sent without real offences. [20] proposed an automated pistol detection system based on Faster RCNN. The training dataset consists of videos of different qualities that either contain guns or not. An alarm scheme was designed to guarantee the robustness of the system, in which an alarm would be triggered only if successive 5 frames of videos are identified as positive. In its best performance, the system realized zero false positives, producing a recall of 100 and a fair precision of 84.21% [20]. An average alarm time of fewer than 0.2 seconds shows its potential in realtime applications. Similarly, a smart surveillance system for identifying gun-related violence was designed in [21]. YOLO v3 and v2 were employed as classification models and acquired satisfactory accuracy of 98.89% and 96.76% respectively. The result verifies YOLO v3's superiority in architecture that incorporates powerful residual blocks. Location information of the crime scenes is retrieved by the backend DAO (Data Access Object) layer, so the police officials can take action at the early age of incidents.</p>
+<p>Gun-related crimes committed in public places are fatal violence that can bring devastating consequences. From individual attacks to mass shootings, thousands of lives may suffer each day. Therefore, the aforementioned technologies are essential in controlling violence before irreversible losses. Consequently, human surveillance can be replaced by automated devices to save resources and maintain long-term robustness.</p>
+<p>In a broader context, real-world crimes can be committed without weapons. [22] offered a more generalised method that can identify four kinds of anomalies that may entail crimes, including assault, vandalism, shooting and fighting. A CNN-based model was proposed with three modules that include pre-processing, feature retrieval, and identification. In the recognition section, an RCNN-like design is used, in which both anomaly detection and classification are performed by the parallel SoftMax classifier. With 2D CNN as the basic network, the model gives high accuracy of 91.2% and a 95.2 AUC on five behaviour classes (normal behaviour included). More than 1000 frames can be processed within one second, which perfectly suits real-time applications.</p>
+<p>In addition to weapons and criminal behaviours, criminals's identities can be recognised in similar ways, too. As mentioned before, detection of criminal events with bare human eyes is hard enough. It would be even more challenging to match the criminal appearing on the screen with the citizen database. If the criminal wears a disguise, such as a mask,human-involved recognition would seem less convincing. Many studies involving masked face recognition have been done since the outbreak of the pandemic. Though not specialized in crime detection, these methods could be transferred and contribute to the advancement of criminal recognition. [23] utilized various YOLO models to build face detection system that is not hindered by the presence of masks. Classic networks such as YOLOv3, Tiny-YOLOv3, and Tiny-YOLOv4 are conducted for comparative analysis, among which YOLO v3 accomplished the best result with an overall precision of 95.83% on the mixed datasets with both covered and uncovered faces. [24] developed a novel network namely FaceMaskNet-21 that went further to recognize the masked person's identity. Instead of using the classification outcome, a 128-dimensional vector is extracted to be compared with the labelled image encodings. In this way, the proposed network yields an overall accuracy of 82.22% on different visual sources from static images to video streams, which outperforms other state-of-the-art technologies. With an execution duration of 10ms, the system could be applied in public places for real-time security surveillance. The training set contains images of masked faces. The generalization ability of the system can be improved by further research, which might enable the adoption of labelled objects with no mask.</p>
+<h3 id="22-natural-language-processing-nlp"><strong>2.2 Natural Language Processing (NLP)</strong></h3>
+<p><em><table><tr><td bgcolor=WhiteSmoke> Natural Language Processing (NLP) is a powerful technology in artificial intelligence, which seeks to interpret the linguistic information included in either text or speech sources. State-of-the-art applications of NLP include semantic recognition, text summarization, etc., which could be beneficial to process the vast amount of crime-related data on the internet or in print literature. </td></tr></table></em></p>
+<h4 id="221-long-short-term-memory-lstm"><em>2.2.1 Long Short-term Memory (LSTM)</em></h4>
+<p>Long Short-term Memory (LSTM) is a powerful deep learning model that can efficiently process sequential data. As an improved version of Recurrence Neural Network (RNN), LSTM addresses the problem of gradient explosion and disappearing during training and shows superior performance on long-term series. Therefore, it has been widely used in the field of time-series prediction and NLP. The unique building block of LSTM namely memory cell is<br>
+the key to storing previous information, the architecture of which is shown in Fig. 7.</p>
+<figure data-type="image" tabindex="4"><img src="https://orionsor.github.io//post-images/1654258681673.png" alt="" loading="lazy"></figure>
+<center>Fig. 7 Memory Cell in LSTM</center>
+<p>Three functional gates are used to control how information is stored, dropped and transited within the network, which isdefined by the following equations:</p>
+<figure data-type="image" tabindex="5"><img src="https://orionsor.github.io//post-images/1654266124007.png" alt="" loading="lazy"></figure>
+<p>where it, ft, ot refers to the input, forget, and output gates respectively. Ct refers to the cell state at time t, and ht is the iutput value.<br>
+In this way, the order information and semantic expression can be well retrieved and processed. In order to understand the context more precisely, Bidirectional LSTM is proposed to transit information in both forward and backward directions [26]. Values of hidden layers are decided by both previous and futuristic corpus, which improves the comprehension of complex texts.</p>
+<h4 id="222-attention-mechanism"><em>2.2.2 Attention Mechanism</em></h4>
+<p>Attention mechanism has a wide range of applications in NLP, from machine translation, and intelligent dialogue to text classification, summarization, etc. Its primary principle is to pursue human-like attention ability to focus on the most relevant or useful information in the given context.</p>
+<p>Attention weight vector is the key concept in the attention mechanism that amplifies crucial parts of the input while reducing noises generated by irrelevant parts. Generally, given a set of encoded tokens and a query q, the weight for each token is calculated through certain scoring functions that measure the tokens dependency on the query q.</p>
+<p>The Bahdanau attention mechanism was proposed in 2014 aiming to improve the performance of machine translation [27]. In the original paper, an RNN-based encoder-decoder framework is used, in which the decoder relieves encoder from generating fixed-length vectors for all corpus by giving important words a higher weight. The scoring is dependent on the last state, which enables the network to focus on the most relevant corpus for each step. The proposed model is illustrated in Fig. 8.</p>
+<figure data-type="image" tabindex="6"><img src="https://orionsor.github.io//post-images/1654258973366.png" alt="" loading="lazy"></figure>
+<center>Fig. 8 Bahdanau attention model [27]</center>
+<p>Like other classic attention models, Bahdana attention requires external information, which may be less useful in task like text classification. Self-attention model was proposed by Google in 2017 along with the design of transformer, which efficiently addresses the aforementioned issue [28].<br>
+In self-attention, the input words are firstly embedded as vectors, which are mapped by three weight matrixes namely into new vectors Qi, Ki, and Vi. The attention score is obtained by the following equation:<br>
+<img src="https://orionsor.github.io//post-images/1654266226332.png" alt="" loading="lazy"><br>
+where dk is the dimension of Q and K.<br>
+Attention mechanisms greatly improve the accuracy in text-based processing such as polarity classification and translation. By eliminating redundant calculation, computation complexity is substantially reduced. In real-world applications, attention can be incorporated other state-of-the art algorithms such as LSTM to build robust NLP models, which may transform the crime analysis field as well.</p>
+<h4 id="223-application"><em>2.2.3 application</em></h4>
+<p>In criminal investigation procedures, vast amounts of text-based documents need to be carefully analysed and reasoned. Manual processing can be time-consuming especially when the case is complex and involves numerous evidence, reports and other records. Therefore, machine learning techniques such as NLP can relieve legal professionals of the burden of endless paperwork. Though critical step still requires human involvement, work in the preparing stage such as document filtering and summarization can be assisted by intelligent methods.</p>
+<p>The development of artificial intelligence in crime and law fields is benefited from the open-source data provided by legal institutions such as courts. [29] used public judgements released from The European Court of Human Rightsto develop a legal text classification system based on the Support Vector Machine (SVM). Judicial decisions are predicted as to whether the case recorded in the document involves a violation or not. An average accuracy of 75% is achieved, which is a promising result in the currently immature application field. Pan et al. proposed a charge prediction model with multi-scale attention to deal with multi-defendant cases [30]. Two attention mechanisms are adopted. Local attention is employed to focus on the particular defendant's name appearing in a certain position within the document. And global attention is used to support decisions with the overall landscape of the case.</p>
+<p>Since the nature of law enforcement is that valid judgements should be made based on statutory laws, additional references can be useful in improving the prediction performance. [31] proposed a hybrid framework that employs the attention mechanism to perform decision prediction and text extraction jointly. Among the given law-related articles, most of the irrelevant ones are filtered out in the first step. Then a bi-directional RNN is used to investigate and maintain the most useful articles for assisting prediction. The system produced a micro-F1 score of 90.21%, showing the effectiveness of the proposed method.</p>
+<p>In addition to judgement prediction, NLP can help in making legal judgements as well. Since judicial decisions are affected by similar cases in the past for Common Law System adopted by the United States and other countries, intelligent approaches could be utilized to identify the most related samples and measure the similarity [32]. [33] proposed a CNN-based framework for retrieving relevant crime cases. The given text is embedded as summary features, and lexical features of the leading sentences within the articles are extracted for matching. The best MAP score of 0.833 is achieved, which may be improved if statistical features of the corpus are considered [33]. Sugathadasa et al. developed An ensemble legal document retrieval model that incorporated TF-IDF and other advanced word embedding tecniques, achieving an average accuracy of over 90% [34]. The system is scalable with the designed extensive training method.</p>
+<p>From the above discussion, it can be seen that NLP is able to perform demanding tasks with crime-related documents. Through intricate computation, both the context within single text and interrelationships between different articles could be discovered, which may outperform human work labour in terms of efficiency. With the continuously increased accuracy, huge application potential is shown for NLP in the legal and crime analysis field.</p>
+<h2 id="center3-wider-issuescenter"><strong><center>3. WIDER ISSUES</center></strong></h2>
+<p><em><table><tr><td bgcolor=WhiteSmoke> As discussed above, various machine learning techniques may bring great changes in the crime analysis domain. Both efficiency and accuracy can be drastically increased in law enforcement work. However, several ethical issues should be considered in real-world applications. Possible AI-based solutions will also be included in this section.</td></tr></table></em></p>
+<h3 id="31-privacy-and-ethnics"><strong>3.1 Privacy and Ethnics</strong></h3>
+<p>The privacy issue is one of the primary concerns in AI/ML technologies application in the crime analysis domain. Personal information privacy may be at stake with the pervasive collection, most of which could be conducted without awareness.</p>
+<p>To start with, accurate urban crime detection relies heavily on the camera surveillance deployed in every corner of the cities. Though most of the cameras are set in public places such as schools, subway stations, shopping malls, etc, the collected videos and images still contain highly private information that might be violated due to the intelligent nature of machine learning techniques. Normally, limited information can be extracted from the original video streams with human eyes. For example, even if a security official monitors the surveillance screen all day, people present there would remain unknown strangers to him unless criminal events take place. However, this kind of anonymity would be deprived in an AI system, where everyone's identity is registered and the machine would recognize them all the time. Therefore, large-scale surveillance may cause panic among citizens because their routines can be leaked from the retrieved position data.</p>
+<p>In addition, [35] proposed another privacy related concept namely epistemic privilege, which means that people know themselves better than other people. With such privilege, people can choose their public persona, keeping the secret side to themselves. However, things change with the massive amounts of personal data being collected for AI processing. In some crime prediction and detection methods, social media posts are either monitored or collected for investigation. Again, public posts themselves may contain limited information that the user prefer hiding. But when they are gathered together in huge amount and systematically analysed in a way beyond human capacity, personal profiles that is more comprehensive than the information subject's own understanding may be built. In this sense, AI systems might over intrude people's lives and jeopardize their privacy.</p>
+<p>For now, many studies have been done to mitigate the privacy issue. Private machine learning focuses on protecting personal information in the machine learning models and training data [36]. [37] proposed novel protocols for private machine learning in various ML methods including neural networks. By distributing private data into different servers and employing secure two-party computation (2PC) for united training, the presented approach is 100 times faster than other state-of-the art techniques. And it can be scaled to millions of data for more wide uses.</p>
+<h3 id="32-bias"><strong>3.2 Bias</strong></h3>
+<p>It is widely acknowledged that human judgement comes with bias. Some AI/ML technologies are designed and employed to mitigate prejudice. However, AI itself has been discovered to have inherent biases for many reasons, which could be fatal in ML-involved juridical procedures. AI bias can be caused by human developers whose own prejudice is reflected in the system design either on purpose or in an unconscious way. Also, the selection of training data can affect the tendency of the outcome as well. A well-known example is the Amazon AI recruitment engine which tends to give lower scores to woman candidates. Such bias is caused because the scoring model is trained on the resumes that the company received in the past 10 years, the majority of which is man. Therefore, the men' s predominance in the technology industry would be maintained if such recruitment system is put into use.</p>
+<p>Similar situation may happen in the crime field. When training the crime detection model, if there is imbalance in the datasets related to the subject' s race or gender, the final system might be more inclined to identify people of certain groups as guilty. Also, if the people found guilty in the past cases happen to have certain characteristics that are irrelevant to the judgement, juridical decisions can be unfair when biased similar case retrieval model is adopted.</p>
+<p>To address the issue, AI developing agencies should be more socially responsible and play their role in detecting the existence of bias in their systems. From technical perspective, detection approaches could be employed to measure the bias within the system. [38] proposed a gender bias as-sessment method in online language translators, which is built with the consideration of the trade-off between bias and accuracy. Though further study is required, it is plausi-ble that bias assessments should be embedded in the devel-oping procedures of AI system development. Also, training datasets should be carefully investigated for compositions to prevent improper tendencies, especially in legal domain where the decision making is closely related to people’s rights.</p>
+<h2 id="center4-conclusionscenter"><strong><center>4. CONCLUSIONS</center></strong></h2>
+<p>In this paper, AI/ML application in the domain of crime analysis is systematically introduced. Current police offcials and law enforcement agencies mainly use manual approaches in detecting crimes and making juridical decisions, which faces the challenge of efficiency and computation complexity when big data analysis is required. Machine learning approaches can well address such issues in crime prediction, detection and legal analysis. Computer vision and Natural Language Processing (NLP) algorithms are introduced as possible technical support for improving the intelligence and automation in the crime-related domain. For instance, RCNN and YOLO networks are useful in conducting real-time detection of violent offences. And NLP methods such as LSTM combined with attention mechanism can contribute to legal documents summarization and information retrieval.</p>
+<p>Ethical concerns related to the widespread application of the aforementioned technologies are discussed. Privacy is at risk of violation when mass surveillance is adopted and countless personal information is collected and analysed without people' s awareness. Also, the inherent bias of AI-based systems may cause inequity regarding gender and race. Security AI measures such as private machine learning and bias assessment are proposed to mitigate the issues.</p>
+<p>In conclusion, there is a promising prospect for the application of AI ML-based technologies in the crime-related field. Further research could be conducted to enhance overall precision and address security concerns in order to meet real-world difficulties.</p>
+<h2 id="center5-referencescenter"><strong><center>5. REFERENCES</center></strong></h2>
+<p>*<table><tr><td bgcolor= WhiteSmoke><br>
+[1]	B. S. KASAMANI, B. ALAKA and M. CHEPNGETICH, &quot;A Real-Time Location Based Proto-type for Notification of Crime Hotspots Using Crowdsourcing,&quot; 2020 IST-Africa Conference (IST-Africa), 2020, pp. 1-10.<br>
+[2]	W. Safat, S. Asghar and S. A. Gillani, &quot;Empirical Analy-sis for Crime Prediction and Forecasting Using Machine Learning and Deep Learning Techniques,&quot; in IEEE Ac-cess, vol. 9, pp. 70080-70094, 2021, doi: 10.1109/ACCESS.2021.3078117.<br>
+[3]	L. Ge, J. Liu, A. Zhou and H. Li, &quot;Crime Rate Inference Using Tensor Decomposition,&quot; 2018 IEEE SmartWorld, Ubiquitous Intelligence &amp; Computing, Advanced &amp; Trusted Computing, Scalable Computing &amp; Communica-tions, Cloud &amp; Big Data Computing, Internet of People and Smart City Innovation (Smart-World/SCALCOM/UIC/ATC/CBDCom/IOP/SCI), 2018, pp. 713-717, doi: 10.1109/SmartWorld.2018.00138.<br>
+[4]	P. Tamilarasi and R. U. Rani, &quot;Diagnosis of Crime Rate against Women using k-fold Cross Validation through Machine Learning,&quot; 2020 Fourth International Conference on Computing Methodologies and Communication (ICCMC), 2020, pp. 1034-1038, doi: 10.1109/ICCMC48092.2020.ICCMC-000193.<br>
+[5]	  Graif, Corina, and Robert J. Sampson. “Spatial Hetero-geneity in the Effects of Immigration and Diversity on Neighborhood Homicide Rates.” Homicide studies 13.3 (2009): 242–260. Web.<br>
+[6]	M. Feng et al., &quot;Big Data Analytics and Mining for Effec-tive Visualization and Trends Forecasting of Crime Data,&quot; in IEEE Access, vol. 7, pp. 106111-106123, 2019, doi: 10.1109/ACCESS.2019.2930410.<br>
+[7]	P. Kaur, G. Rani, T. Sharma and A. Sharma, &quot;A Compar-ative Study to analyze crime threats using data mining and machine learning approach,&quot; 2021 International Confer-ence on System, Computation, Automation and Network-ing (ICSCAN), 2021, pp. 1-4, doi: 10.1109/ICSCAN53069.2021.9526489.<br>
+[8]	W. Safat, S. Asghar and S. A. Gillani, &quot;Empirical Analy-sis for Crime Prediction and Forecasting Using Machine Learning and Deep Learning Techniques,&quot; in IEEE Ac-cess, vol. 9, pp. 70080-70094, 2021, doi: 10.1109/ACCESS.2021.3078117.<br>
+[9]	Aghababaei, Somayyeh, and Masoud Makrehchi. “Min-ing Twitter Data for Crime Trend Prediction.” Intelligent data analysis 22.1 (2018): 117–141. Web.<br>
+[10]	P. Sivakumar, J. V, R. R and K. S, &quot;Real Time Crime De-tection Using Deep Learning Algorithm,&quot; 2021 Interna-tional Conference on System, Computation, Automation and Networking (ICSCAN), 2021, pp. 1-5, doi: 10.1109/ICSCAN53069.2021.9526393.<br>
+[11]	U. V. Navalgund and P. K., &quot;Crime Intention Detection System Using Deep Learning,&quot; 2018 International Con-ference on Circuits and Systems in Digital Enterprise Technology (ICCSDET), 2018, pp. 1-6, doi: 10.1109/ICCSDET.2018.8821168.<br>
+[12]	Nissan, Ephraim. “Digital Technologies and Artificial In-telligence’s Present and Foreseeable Impact on Lawyer-ing, Judging, Policing and Law Enforcement.” AI &amp; soci-ety 32.3 (2015): 441–464. Web.<br>
+[13]	 Leonardo Lesmo, Alessandro Mazzei, Monica Palmirani and Daniele Radicioni, &quot;TULSI: an NLP system for ex-tracting legal modificatory provisions&quot;, Artificial Intelli-gence and Law, pp. 21, 2013.<br>
+[14]	Graif, Corina, and Robert J. Sampson. “Spatial Heteroge-neity in the Effects of Immigration and Diversity on Neighborhood Homicide Rates.” Homicide studies 13.3 (2009): 242–260. Web.<br>
+[15]	A. A. Almuhanna, M. M. Alrehili, S. H. Alsubhi and L. Syed, &quot;Prediction of Crime in Neighbourhoods of New York City using Spatial Data Analysis,&quot; 2021 1st Interna-tional Conference on Artificial Intelligence and Data Ana-lytics (CAIDA), 2021, pp. 23-30, doi: 10.1109/CAIDA51941.2021.9425120.<br>
+[16]	J. Tsotsos, I. Kotseruba, A. Andreopoulos and Y. Wu, &quot;Why Does Data-Driven Beat Theory-Driven Computer Vision?,&quot; 2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW), 2019, pp. 2057-2060, doi: 10.1109/ICCVW.2019.00260.<br>
+[17]	R. Girshick, &quot;Fast R-CNN&quot;, IEEE Int. Conf. on Comput-er Vision (ICCV), December 2015.<br>
+[18]	S. Ren, K. He, R. Girshick and J. Sun, &quot;Faster R-CNN: Towards Real-Time Object Detection with Region Pro-posal Networks&quot;, 2015.<br>
+[19]	] J. Redmon, S. Divvala, R. Girshick and A. Farhadi, ”You Only Look Once: Unified, Real-Time Object Detec-tion,” 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.<br>
+[20]	Olmos, Roberto, Siham Tabik, and Francisco Herrera. “Automatic Handgun Detection Alarm in Videos Using Deep Learning.” Neurocomputing (Amsterdam) 275 (2018): 66–72. Web.<br>
+[21]	Narejo, Sanam et al. “Weapon Detection Using YOLO V3 for Smart Surveillance System.” Mathematical prob-lems in engineering 2021 (2021): 1–9. Web.<br>
+[22]	Jan, Atif, and Gul Muhammad Khan. “Deep Vigilante: A Deep Learning Network for Real-World Crime Detec-tion.” Journal of intelligent &amp; fuzzy systems 42.3 (2022): 1949–1961. Web.<br>
+[23]	S. Mhadgut, &quot;Masked Face Detection and Recognition System in Real Time using YOLOv3 to combat COVID-19,&quot; 2021 12th International Conference on Computing Communication and Networking Technologies (ICCCNT), 2021, pp. 1-7, doi: 10.1109/ICCCNT51525.2021.9579525.<br>
+[24]	Golwalkar, Rucha, and Ninad Mehendale. “Masked-Face Recognition Using Deep Metric Learning and Face-MaskNet-21.” Applied intelligence (Dordrecht, Nether-lands) (2022): 1–12. Web.<br>
+[25]	M. Häberle, M. Werner and X. X. Zhu, &quot;Building Type Classification from Social Media Texts via Geo-Spatial Textmining,&quot; IGARSS 2019 - 2019 IEEE International Geoscience and Remote Sensing Symposium, 2019, pp. 10047-10050, doi: 10.1109/IGARSS.2019.8898836.<br>
+[26]	C. Li, G. Zhan and Z. Li, &quot;News Text Classification Based on Improved Bi-LSTM-CNN,&quot; 2018 9th Interna-tional Conference on Information Technology in Medicine and Education (ITME), 2018, pp. 890-893, doi: 10.1109/ITME.2018.00199.<br>
+[27]	Bahdanau D ,  Cho K ,  Bengio Y . Neural Machine Translation by Jointly Learning to Align and Translate[J]. Computer Science, 2014.<br>
+[28]	Vaswani, Ashish et al. “Attention Is All You Need.” (2017): n. pag. Print.<br>
+[29]	Medvedeva M , Vols M , Wieling M . Using machine learning to predict decisions of the European Court of Human Rights[J]. Artificial Intelligence and Law, 2020, 28(2):237-266.<br>
+[30]	Sicheng Pan, Tun Lu, Ning Gu, Huajuan Zhang, and<br>
+Chunlin Xu. 2019. Charge prediction for multi-defendant cases with multi-scale attention. In CCF Conference on Computer Supported Cooperative Work and Social Computing. Springer.<br>
+[31]	Bingfeng Luo, Yansong Feng, Jianbo Xu, Xiang Zhang, and Dongyan Zhao. 2017. Learning to predict charges for criminal cases with legal basis. In Pro ceedings of EMNLP.<br>
+[32]	Zhong, Haoxi et al. “How Does NLP Benefit Legal Sys-tem: A Summary of Legal Artificial Intelligence.” (2020): n. pag. Print.<br>
+[33]	Vu Tran, Minh Le Nguyen, and Ken Satoh. 2019. Build-ing legal case retrieval systems with lexical matching and summarization using a pre-trained phrase scoring model. In Proceedings of Artificial Intelligence and Law. ACM.<br>
+[34]	Keet Sugathadasa, Buddhi Ayesha, Nisansa de Silva, Amal Shehan Perera, Vindula Jayawardana, Dimuthu Lakmal, and Madhavi Perera. 2018. Legal document re-trieval using document vector embed dings and deep learning. In Proceedings of SAI. Springer.<br>
+[35]	Elliott, David, and Eldon Soifer. “AI Technologies, Priva-cy, and Security.” Frontiers in artificial intelligence 5 (2022): 826737–826737. Web.<br>
+[36]	T. Zhu, D. Ye, W. Wang, W. Zhou and P. S. Yu, &quot;More Than Privacy: Applying Differential Privacy in Key Areas of Artificial Intelligence,&quot; in IEEE Transactions on Knowledge and Data Engineering, vol. 34, no. 6, pp. 2824-2843, 1 June 2022, doi: 10.1109/TKDE.2020.3014246.<br>
+[37]	P. Mohassel and Y. Zhang, &quot;SecureML: A System for Scalable Privacy-Preserving Machine Learning,&quot; 2017 IEEE Symposium on Security and Privacy (SP), 2017, pp. 19-38, doi: 10.1109/SP.2017.12.<br>
+[38]	M. Bernagozzi, B. Srivastava, F. Rossi and S. Usmani, &quot;Gender Bias in Online Language Translators: Visualiza-tion, Human Perception, and Bias/Accuracy Tradeoffs,&quot; in IEEE Internet Computing, vol. 25, no. 5, pp. 53-63, 1 Sept.-Oct. 2021, doi: 10.1109/MIC.2021.3097604.</p>
+</td></tr></table>*
+
+            </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
